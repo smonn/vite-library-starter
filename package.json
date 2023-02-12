@@ -22,7 +22,22 @@
     "coverage": "vitest run --coverage",
     "format": "prettier --write .",
     "lint": "eslint . --ext .ts,.tsx",
-    "ci": "run-s lint coverage build"
+    "ci": "run-s lint coverage build",
+    "prepare": "husky install"
+  },
+  "lint-staged": {
+    ".{js,mjs,cjs,ts,mts,cts,jsx,tsx}": [
+      "eslint --fix"
+    ],
+    ".{ts,tsx,d.ts,cts,d.cts,mts,d.mts}": [
+      "tsc --noEmit"
+    ],
+    "*.{js,mjs,cjs,ts,mts,cts,jsx,tsx}": [
+      "vitest run"
+    ],
+    "*": [
+      "prettier --ignore-unknown --write"
+    ]
   },
   "devDependencies": {
     "@typescript-eslint/eslint-plugin": "^5.51.0",
@@ -31,6 +46,8 @@
     "eslint": "^8.34.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
+    "husky": "^8.0.3",
+    "lint-staged": "^13.1.1",
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
