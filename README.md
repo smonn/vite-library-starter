@@ -7,6 +7,8 @@ This is a template repository for Node.js libraries. It has been configured with
 - [typescript](https://www.typescriptlang.org/docs/) - typing
 - [eslint](https://eslint.org/) - linting
 - [prettier](https://prettier.io/) - formatting
+- [husky](https://typicode.github.io/husky/) - pre-commit hooks
+- [lint-staged](https://github.com/okonet/lint-staged) - pre-commit checks
 - [github actions](https://docs.github.com/en/actions) - deploying
 
 Please read the docs for each for any customizations you need.
