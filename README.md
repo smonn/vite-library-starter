@@ -13,6 +13,8 @@ This is a template repository for Node.js libraries. It has been configured with
 
 Please read the docs for each for any customizations you need.
 
+I intentionally did not include anything for CSS, or a library such as Vue or React. There are official plugins for most of that, and anything beyond the basics there is, for example, [Awesome Vite.js](https://github.com/vitejs/awesome-vite).
+
 ## Setup
 
 ### Step 1: Setup new repository
@@ -21,7 +23,7 @@ Click [**Use this template** → **Create new repository**](https://github.com/s
 
 ### Step 2: Change `name` in `package.json`
 
-Locally, edit `package.json` and replace the `name` with your own package name. This can either include a scope, e.g. `@scope/package-name`, or omit it, e.g. `package-name`. Commit the changes and push the commit. It's usually safes to include a scope to ensure the package name is not taken.
+Locally, edit `package.json` and replace the `name` with your own package name. This can either include a scope, e.g. `@scope/package-name`, or omit it, e.g. `package-name`. Commit the changes and push the commit. It's usually safer to include a scope to ensure the package name is not taken.
 
 ### Step 3: Configure `.github/workflows/cd.yml`
 
