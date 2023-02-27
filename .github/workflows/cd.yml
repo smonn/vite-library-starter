@@ -9,8 +9,6 @@ jobs:
     steps:
       - name: Checkout repo
         uses: actions/checkout@v3
-        with:
-          ref: ${{ github.event.release.target_commitish }}
 
       - name: Install pnpm
         uses: pnpm/action-setup@v2
@@ -21,7 +19,7 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: 16
-          cache: 'pnpm'
+          cache: "pnpm"
 
       - name: Install dependencies
         run: pnpm install --frozen-lockfile
@@ -31,7 +29,7 @@ jobs:
           git config --global user.name "${{ secrets.GIT_NAME }}"
           git config --global user.email "${{ secrets.GIT_EMAIL }}"
       - name: Update version in package.json
-        run: pnpm version ${{ github.event.release.tag_name }} --allow-same-version
+        run: pnpm version ${{ github.ref_name }} --allow-same-version
 
       - name: Configure npm client for publish
         run: pnpm config set '//registry.npmjs.org/:_authToken' "${{ secrets.NPM_TOKEN }}"

@@ -1,6 +1,6 @@
 {
   "name": "vite-library-starter",
-  "private": true,
+  "description": "Vite library starter",
   "version": "0.0.0",
   "type": "module",
   "files": [
@@ -23,6 +23,7 @@
     "format": "prettier --write .",
     "lint": "eslint . --ext .ts,.tsx",
     "ci": "run-s lint coverage build",
+    "prepublishOnly": "pnpm run ci",
     "prepare": "husky install"
   },
   "lint-staged": {
@@ -40,11 +41,11 @@
     ]
   },
   "devDependencies": {
-    "@types/node": "^18.13.0",
-    "@typescript-eslint/eslint-plugin": "^5.52.0",
-    "@typescript-eslint/parser": "^5.52.0",
-    "@vitest/coverage-c8": "^0.28.5",
-    "eslint": "^8.34.0",
+    "@types/node": "^18.14.2",
+    "@typescript-eslint/eslint-plugin": "^5.53.0",
+    "@typescript-eslint/parser": "^5.53.0",
+    "@vitest/coverage-c8": "^0.29.1",
+    "eslint": "^8.35.0",
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "husky": "^8.0.3",
@@ -52,8 +53,8 @@
     "npm-run-all": "^4.1.5",
     "prettier": "^2.8.4",
     "typescript": "^4.9.5",
-    "vite": "^4.1.1",
-    "vite-plugin-dts": "^1.7.3",
-    "vitest": "^0.28.5"
+    "vite": "^4.1.4",
+    "vite-plugin-dts": "^2.0.2",
+    "vitest": "^0.29.1"
   }
 }
