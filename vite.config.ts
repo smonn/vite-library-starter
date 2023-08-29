@@ -15,7 +15,7 @@ function toPascalCase(text: string) {
     .replace(nonWord, "")
     .replace(
       firstLetterAfterSpace,
-      (_, $2: string, $3: string) => `${$2.toUpperCase() + $3}`
+      (_, $2: string, $3: string) => `${$2.toUpperCase() + $3}`,
     )
     .replace(word, (s) => s.toUpperCase());
 }
@@ -23,15 +23,20 @@ function toPascalCase(text: string) {
 export default defineConfig({
   build: {
     lib: {
-      entry: "src/index.ts",
+      entry: "src/main.ts",
       name: toPascalCase(packageJSON.name),
-      fileName: "index",
+      fileName: "main",
     },
   },
   plugins: [
     dts({
-      rollupTypes: true,
-      exclude: ["**/vite-env.d.ts"],
+      // rollupTypes: true,
+      exclude: [
+        "node_modules/**",
+        "src/**/vite-env.d.ts",
+        "src/**/*.spec.ts",
+        "vite.config.ts",
+      ],
     }),
   ],
 });

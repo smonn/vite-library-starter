@@ -2,4 +2,4 @@ export function hello(name?: string): string {
   return `Hello${name ? " " + name : ""}!`;
 }
 
-export { other } from "./other";
+export { other } from "./other.js";
