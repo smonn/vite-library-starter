@@ -1,5 +1,5 @@
 import { expect, test } from "vitest";
-import { hello } from ".";
+import { hello } from "./main.js";
 
 test('returns "Hello World!"', () => {
   expect(hello("World")).toBe("Hello World!");
